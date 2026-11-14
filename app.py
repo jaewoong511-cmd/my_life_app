@@ -218,7 +218,7 @@ elif menu == "🗓️ D-DAY 관리":
             with st.container(border=True):
                 st.markdown(f"#### {e['title']} <span style='float:right; color:#ff4b4b;'>{dday_text(e['target_date'])}</span>", unsafe_allow_html=True)
                 st.caption(f"날짜: {e['target_date']}")
-                if st.button("삭제", key=f"df_{e['id']}", size="small"):
+                if st.button("삭제", key=f"df_{e['id']}"):
                     data["ddays"] = [x for x in data["ddays"] if x["id"] != e["id"]]; save_data(); st.rerun()
     with c2:
         st.subheader("🕰️ 지나간 일정")
@@ -227,7 +227,7 @@ elif menu == "🗓️ D-DAY 관리":
             with st.container(border=True):
                 st.markdown(f"#### {e['title']} <span style='float:right; color:gray;'>{dday_text(e['target_date'])}</span>", unsafe_allow_html=True)
                 st.caption(f"날짜: {e['target_date']}")
-                if st.button("삭제", key=f"dp_{e['id']}", size="small"):
+                if st.button("삭제", key=f"dp_{e['id']}"):
                     data["ddays"] = [x for x in data["ddays"] if x["id"] != e["id"]]; save_data(); st.rerun()
 
 # --------------------------------------------------
